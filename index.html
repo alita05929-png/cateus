@@ -1,229 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cateus Maximus — $CATEUS</title>
-  <meta name="description" content="Cateus Maximus $CATEUS brings Roman grandeur and feline fury to the fast-moving culture of crypto memes. Community participation, epic branding, and Solana meme tokens." />
-  <meta property="og:title" content="Cateus Maximus — $CATEUS" />
-  <meta property="og:description" content="Roman grandeur and feline fury meet the fast-moving culture of Solana meme tokens." />
-  <meta property="og:image" content="banner.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="banner.png" />
-  <link rel="icon" href="logo.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500;600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cateus Maximus — $CATEUS on Solana</title>
+<meta name="description" content="Cateus Maximus ($CATEUS) — Born in Rome. Forged on Solana. Conquering the trenches, one pump at a time.">
+<link rel="canonical" href="/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cateus Maximus — $CATEUS">
+<meta property="og:description" content="Born in Rome. Forged on Solana. Conquering the trenches, one pump at a time.">
+<meta property="og:image" content="/assets/img/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cateus Maximus — $CATEUS">
+<meta name="twitter:description" content="Born in Rome. Forged on Solana. Conquering the trenches, one pump at a time.">
+<meta name="twitter:image" content="/assets/img/og-card.jpg">
+<meta name="twitter:image:alt" content="Cateus Maximus — Roman cat warrior of Solana">
+<meta property="og:image:alt" content="Cateus Maximus — Roman cat warrior of Solana">
+<meta property="og:site_name" content="Cateus Maximus">
+<meta name="theme-color" content="#1a0e08">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="apple-mobile-web-app-title" content="CATEUS">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.dexscreener.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-  <div class="grain" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <nav class="nav">
-      <a href="#top" class="nav-brand">
-        <img src="logo.png" alt="Cateus Maximus" class="nav-logo" />
-        <span>CATEUS MAXIMUS</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#story">Story</a></li>
-        <li><a href="#about">Lore</a></li>
-        <li><a href="#contract">CA</a></li>
-        <li><a href="#tokenomics">Tokenomics</a></li>
-        <li><a href="#buy">Buy</a></li>
-        <li class="nav-socials">
-          <a href="https://x.com/" data-twitter target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
-        </li>
-      </ul>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+<canvas id="glcanvas" aria-hidden="true"></canvas>
+<canvas id="dustfield" aria-hidden="true"></canvas>
+<div class="nebula" aria-hidden="true"></div>
+<div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="grain" aria-hidden="true"></div>
+
+<a class="skip" href="#lore">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Cateus Maximus home">
+      <picture><source srcset="/assets/img/mascot-avatar.avif" type="image/avif"><img src="/assets/img/mascot-avatar.jpg" alt="" width="34" height="34" decoding="async"></picture>
+      <span>CATEUS</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#lore">Lore</a>
+      <a href="#mascot">Mascot</a>
+      <a href="#token">Token</a>
+      <a href="#buy">How to buy</a>
+      <a href="#art">Art</a>
     </nav>
-  </header>
+    <a class="btn btn-sm" id="nav-buy" href="#buy">Buy $CATEUS</a>
+  </div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+</header>
 
-  <main>
-    <section class="hero" id="top">
-      <img class="hero-image" src="banner.png" alt="Cateus Maximus in the Colosseum arena" />
-      <div class="hero-copy">
-        <p class="seal">SPQR</p>
-        <p class="hero-kicker">Solana meme token</p>
-        <h1>CATEUS<br /><span>MAXIMUS</span></h1>
-        <p class="hero-ticker">$CATEUS</p>
-        <p class="hero-bio">Cateus Maximus $CATEUS brings Roman grandeur and feline fury to the fast-moving culture of crypto memes. The project is designed around community participation, epic visual branding, and the playful culture of Solana meme tokens.</p>
-        <ul class="stat-row">
-          <li><strong>ROME</strong><span>Empire</span></li>
-          <li><strong>SOL</strong><span>Solana</span></li>
-          <li><strong>$CATEUS</strong><span>ticker</span></li>
-        </ul>
-        <div class="hero-actions">
-          <a href="https://pump.fun" data-pumpfun target="_blank" rel="noopener noreferrer" class="btn btn-blood">Buy $CATEUS</a>
-          <a href="#story" class="btn btn-line">The story</a>
-        </div>
+<!-- ── HERO ─────────────────────────────────────────────── -->
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+
+    <p class="eyebrow reveal">
+      <span class="dot"></span> Born in Rome. Forged on Solana.
+    </p>
+
+    <figure class="hero-mascot reveal">
+      <span class="hero-glow" aria-hidden="true"></span>
+      <picture>
+        <source srcset="/assets/img/mascot-hero.avif" type="image/avif">
+        <img src="/assets/img/mascot-hero.jpg" width="700" height="700" fetchpriority="high"
+             decoding="async"
+             alt="Cateus Maximus, a ginger tabby cat in Roman armor with sword and shield">
+      </picture>
+    </figure>
+
+    <h1 class="wordmark reveal" aria-label="CATEUS">
+      <span>C</span><span>A</span><span>T</span><span>E</span><span>U</span><span>S</span>
+    </h1>
+
+    <p class="lede reveal">
+      A Roman cat warrior with a crimson crest and a gladius —
+      conquering the trenches, one pump at a time.
+      That legend is <strong>Cateus Maximus</strong>.
+    </p>
+
+    <div class="chips reveal" role="list">
+      <span class="chip" role="listitem">Solana</span>
+      <span class="chip" role="listitem">$CATEUS</span>
+      <span class="chip" role="listitem">1,000,000,000 supply</span>
+      <span class="chip" role="listitem">Community-led</span>
+    </div>
+
+    <div class="cta reveal">
+      <a class="btn btn-lg" id="buy-primary" href="#buy">Buy $CATEUS</a>
+      <a class="btn btn-lg btn-ghost" href="https://x.com/cateusmaximusol" target="_blank" rel="noopener">
+        Follow on X <svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+      </a>
+    </div>
+
+    <!-- contract -->
+    <div class="ca reveal">
+      <span class="ca-label">Contract</span>
+      <code id="ca-text">TBA</code>
+      <button class="ca-copy" id="ca-copy" type="button" aria-label="Copy contract address">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span>Copy</span>
+      </button>
+    </div>
+    <p class="ca-warn reveal">Always verify the address. It is the only one.</p>
+
+    <!-- live stats -->
+    <div class="stats reveal" id="stats" aria-live="polite">
+      <div class="stat"><span class="k">Price</span><span class="v" data-stat="price">—</span></div>
+      <div class="stat"><span class="k">Market cap</span><span class="v" data-stat="mcap">—</span></div>
+      <div class="stat"><span class="k">Liquidity</span><span class="v" data-stat="liq">—</span></div>
+      <div class="stat"><span class="k">24h</span><span class="v" data-stat="chg">—</span></div>
+    </div>
+    <p class="stats-note" id="stats-note">Live from DexScreener when CA is live</p>
+
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span></span></div>
+</section>
+
+<!-- ── LORE ─────────────────────────────────────────────── -->
+<section id="lore" class="lore">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-label">Lore</span>
+      <h2 class="section-title">The conquest</h2>
+    </header>
+
+    <article class="chapter reveal">
+      <div class="numeral" aria-hidden="true">I</div>
+      <div class="chapter-body">
+        <h3>Born in Rome</h3>
+        <p>Under a crimson plume and the shadow of the Colosseum, a ginger tabby rose from the arena dust.
+           Armor fitted. Shield raised. The trenches of Solana were waiting.</p>
       </div>
-    </section>
+      <figure class="chapter-art"><picture><source srcset="/assets/img/chapter-1.avif" type="image/avif"><img src="/assets/img/chapter-1.jpg" alt="Cateus Maximus in Roman armor" loading="lazy" width="620" height="620" decoding="async"></picture></figure>
+    </article>
 
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>CATEUS MAXIMUS</span><span>$CATEUS</span><span>ROME</span><span>GOLD</span><span>GLORY</span><span>SOLANA</span><span>COMMUNITY</span>
-        <span>CATEUS MAXIMUS</span><span>$CATEUS</span><span>ROME</span><span>GOLD</span><span>GLORY</span><span>SOLANA</span><span>COMMUNITY</span>
+    <article class="chapter reveal">
+      <div class="numeral" aria-hidden="true">II</div>
+      <div class="chapter-body">
+        <h3>Forged on Solana</h3>
+        <p>Speed is the new sword. Cateus crossed from marble to mempool —
+           forged in block times measured in heartbeats, not hours.</p>
+      </div>
+      <figure class="chapter-art"><picture><source srcset="/assets/img/chapter-2.avif" type="image/avif"><img src="/assets/img/chapter-2.jpg" alt="Cateus Maximus leading the charge" loading="lazy" width="620" height="620" decoding="async"></picture></figure>
+    </article>
+
+    <article class="chapter reveal">
+      <div class="numeral" aria-hidden="true">III</div>
+      <div class="chapter-body">
+        <h3>Blade and banner</h3>
+        <p>The gladius for the chart. The shield for the bag. The red crest for the crowd that marches with him.
+           Cateus does not negotiate with hesitation.</p>
+      </div>
+      <figure class="chapter-art"><picture><source srcset="/assets/img/chapter-3.avif" type="image/avif"><img src="/assets/img/chapter-3.jpg" alt="Cateus Maximus with sword and shield" loading="lazy" width="620" height="620" decoding="async"></picture></figure>
+    </article>
+
+    <article class="chapter reveal">
+      <div class="numeral" aria-hidden="true">IV</div>
+      <div class="chapter-body">
+        <h3>One pump at a time</h3>
+        <p>No roadmap, no suits — just a Roman cat, a Solana chain, and a legion that decided he was theirs.
+           That is the whole mechanism.</p>
+      </div>
+      <figure class="chapter-art"><picture><source srcset="/assets/img/chapter-4.avif" type="image/avif"><img src="/assets/img/chapter-4.jpg" alt="Cateus Maximus before the Colosseum" loading="lazy" width="620" height="620" decoding="async"></picture></figure>
+    </article>
+  </div>
+</section>
+
+
+<!-- ── MASCOT ───────────────────────────────────────────── -->
+<section id="mascot" class="mascot">
+  <div class="mascot-stage reveal">
+    <img class="mascot-video mascot-banner"
+         src="/assets/img/og-card.jpg"
+         width="1280" height="720"
+         alt="Cateus Maximus banner — Roman cat warrior in the arena"
+         loading="lazy" decoding="async">
+  </div>
+
+  <div class="wrap mascot-grid">
+    <div class="mascot-copy reveal">
+      <h2 class="section-title left">Solana's<br>Roman mascot</h2>
+      <p>Protocols get logos. The good ones get a character — something a community can meme at 3am and still recognise instantly.</p>
+      <p><strong>Cateus Maximus</strong> is that character. Not a product, not a promise of yield —
+         a centurion cat with a halo of war and a blade for the trenches.</p>
+      <ul class="ticks">
+        <li>Born in Rome. Forged on Solana.</li>
+        <li>Fixed supply of 1,000,000,000</li>
+        <li>Ticker <code>$CATEUS</code> — community-led</li>
+        <li>No roadmap, no promises, no suits</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── ART RIBBON ───────────────────────────────────────── -->
+<div class="ribbon" aria-hidden="true">
+  <div class="ribbon-track" id="ribbon"></div>
+</div>
+
+<!-- ── MARQUEE ──────────────────────────────────────────── -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Born in Rome</span><i>✦</i>
+    <span>Forged on Solana</span><i>✦</i>
+    <span>Cateus Maximus</span><i>✦</i>
+    <span>$CATEUS</span><i>✦</i>
+    <span>Born in Rome</span><i>✦</i>
+    <span>Forged on Solana</span><i>✦</i>
+    <span>Cateus Maximus</span><i>✦</i>
+    <span>$CATEUS</span><i>✦</i>
+  </div>
+</div>
+
+<!-- ── TOKEN ────────────────────────────────────────────── -->
+<section id="token" class="token">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-label">Token</span>
+      <h2 class="section-title">The token</h2>
+      <p class="section-sub">Everything verifiable once the CA is live. Numbers update live.</p>
+    </header>
+
+    <div class="cards">
+      <div class="card reveal">
+        <span class="k">Name</span>
+        <span class="v">Cateus Maximus</span>
+        <span class="s">The Roman cat</span>
+      </div>
+      <div class="card reveal">
+        <span class="k">Ticker</span>
+        <span class="v">$CATEUS</span>
+        <span class="s">One name, one blade</span>
+      </div>
+      <div class="card reveal">
+        <span class="k">Chain</span>
+        <span class="v">Solana</span>
+        <span class="s">SPL</span>
+      </div>
+      <div class="card reveal">
+        <span class="k">Total supply</span>
+        <span class="v">1,000,000,000</span>
+        <span class="s">One billion</span>
+      </div>
+      <div class="card reveal">
+        <span class="k">Market cap</span>
+        <span class="v" data-stat="mcap">—</span>
+        <span class="s">Live</span>
+      </div>
+      <div class="card reveal">
+        <span class="k">Liquidity</span>
+        <span class="v" data-stat="liq">—</span>
+        <span class="s">Solana DEX</span>
+      </div>
+      <div class="card reveal">
+        <span class="k">24h volume</span>
+        <span class="v" data-stat="vol">—</span>
+        <span class="s">Live</span>
+      </div>
+      <div class="card reveal">
+        <span class="k">Trend</span>
+        <span class="v tf" >
+          <span><em>1h</em><b data-stat="h1">—</b></span>
+          <span><em>6h</em><b data-stat="h6">—</b></span>
+          <span><em>24h</em><b data-stat="h24">—</b></span>
+        </span>
+        <span class="s">One window can flatter; three cannot</span>
       </div>
     </div>
 
-    <div class="proof-bar" aria-label="Brand pillars">
-      <p><strong>Empire</strong> gold, red, and glory</p>
-      <p><strong>Community</strong> built to conquer</p>
-      <p><strong>Solana</strong> meme token culture</p>
+    <p class="chain-note reveal" id="chain-note">Contract address TBA — paste the CA when live and stats unlock.</p>
+
+    <div class="verify reveal">
+      <span>Follow the campaign</span>
+      <a href="https://x.com/cateusmaximusol" target="_blank" rel="noopener">X / @cateusmaximusol</a>
+      <a href="https://dexscreener.com/solana" target="_blank" rel="noopener">DexScreener</a>
     </div>
+  </div>
+</section>
 
-    <section class="section" id="story">
-      <div class="container">
-        <header class="section-head">
-          <p class="section-index">01</p>
-          <div>
-            <p class="section-label">The brand</p>
-            <h2 class="section-title">Cateus Maximus.<br />Fast memes.</h2>
-            <p class="section-lede tight">An epic mark, made for the speed of Solana.</p>
-          </div>
-        </header>
-        <figure class="banner-frame">
-          <img src="banner.png" alt="Cateus Maximus standing in the Colosseum at sunset" />
-        </figure>
-      </div>
-    </section>
+<!-- ── HOW TO BUY ───────────────────────────────────────── -->
+<section id="buy" class="buy">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-label">How to buy</span>
+      <h2 class="section-title">Four steps</h2>
+      <p class="section-sub">Ten minutes if it's your first time.</p>
+    </header>
 
-    <section class="section about" id="about">
-      <div class="about-bleed">
-        <div class="about-visual">
-          <img src="logo.png" alt="Cateus Maximus" class="about-face" />
-        </div>
-        <div class="about-copy">
-          <p class="section-index">02</p>
-          <p class="section-label">The icon</p>
-          <h2 class="section-title">Meet Cateus Maximus</h2>
-          <p class="section-text">
-            <strong>Cateus Maximus</strong> wears the classic Roman kit — cape red, armor gold, and a lion-headed shield — and puts it on Solana as <strong>$CATEUS</strong>.
-          </p>
-          <p class="section-text">
-            The project is built around community participation, a brand you can spot instantly, and the playful culture of Solana meme tokens.
-          </p>
-          <ul class="lore-list">
-            <li><span>Name</span>Cateus Maximus</li>
-            <li><span>Ticker</span>$CATEUS</li>
-            <li><span>Chain</span>Solana</li>
-            <li><span>Colors</span>Gold, red, and bronze</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <ol class="steps">
+      <li class="step reveal">
+        <span class="n">01</span>
+        <h3>Get a wallet</h3>
+        <p>Install Phantom, Solflare or Backpack, and switch the network to Solana.</p>
+      </li>
+      <li class="step reveal">
+        <span class="n">02</span>
+        <h3>Fund it with SOL</h3>
+        <p>Buy SOL on any exchange and withdraw it to your wallet on Solana. Keep a little spare for fees.</p>
+      </li>
+      <li class="step reveal">
+        <span class="n">03</span>
+        <h3>Open your DEX</h3>
+        <p>Connect your wallet on Jupiter, Raydium or pump.fun and paste the $CATEUS contract address.</p>
+        <button class="mini-copy" type="button" data-copy="TBA">Copy contract</button>
+      </li>
+      <li class="step reveal">
+        <span class="n">04</span>
+        <h3>Swap and conquer</h3>
+        <p>Swap your SOL for $CATEUS, confirm in your wallet, and join the legion. Then come make some art.</p>
+      </li>
+    </ol>
 
-    <section class="section" id="contract">
-      <div class="container">
-        <header class="section-head">
-          <p class="section-index">03</p>
-          <div>
-            <p class="section-label">The seal</p>
-            <h2 class="section-title">$CATEUS CA</h2>
-          </div>
-        </header>
-        <div class="ca-box">
-          <span class="ca-kicker">Solana mint</span>
-          <code id="ca-display" class="ca-address">TBA</code>
-          <button id="copy-ca" class="btn btn-line" type="button" title="Copy address">Copy</button>
-        </div>
-        <p id="copy-toast" class="copy-toast" role="status" aria-live="polite"></p>
-      </div>
-    </section>
-
-    <section class="section tokenomics" id="tokenomics">
-      <div class="container">
-        <header class="section-head">
-          <p class="section-index">04</p>
-          <div>
-            <p class="section-label">The offering</p>
-            <h2 class="section-title">Tokenomics</h2>
-          </div>
-        </header>
-        <p class="section-lede">Fair launch on pump.fun. No team bag. No tax. Just $CATEUS.</p>
-        <div class="token-board">
-          <article>
-            <p class="token-value">100%</p>
-            <h3>Community</h3>
-            <p>Zero team allocation.</p>
-          </article>
-          <article>
-            <p class="token-value">1B</p>
-            <h3>Supply</h3>
-            <p>1,000,000,000 $CATEUS</p>
-          </article>
-          <article>
-            <p class="token-value">0%</p>
-            <h3>Tax</h3>
-            <p>Buy and sell. Nothing taken.</p>
-          </article>
-          <article>
-            <p class="token-value">LP</p>
-            <h3>pump.fun</h3>
-            <p>Bonding curve, then Solana LP.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section buy" id="buy">
-      <div class="container">
-        <header class="section-head">
-          <p class="section-index">05</p>
-          <div>
-            <p class="section-label">The move</p>
-            <h2 class="section-title">Get $CATEUS</h2>
-          </div>
-        </header>
-        <ol class="steps">
-          <li>
-            <span>01</span>
-            <h3>Wallet</h3>
-            <p>Install Phantom or any Solana wallet and fund it with SOL.</p>
-          </li>
-          <li>
-            <span>02</span>
-            <h3>pump.fun</h3>
-            <p>Open the official $CATEUS page and connect.</p>
-          </li>
-          <li>
-            <span>03</span>
-            <h3>Swap</h3>
-            <p>Buy $CATEUS. Match the CA on this site.</p>
-          </li>
-          <li>
-            <span>04</span>
-            <h3>March</h3>
-            <p>Share the brand and join the legion.</p>
-          </li>
-        </ol>
-        <div class="buy-cta">
-          <a href="https://pump.fun" data-pumpfun target="_blank" rel="noopener noreferrer" class="btn btn-blood btn-lg">Buy on pump.fun</a>
-          <a href="https://x.com/" data-twitter target="_blank" rel="noopener noreferrer" class="btn btn-line btn-lg">X</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <img src="logo.png" alt="" class="footer-logo" />
-      <div>
-        <strong>Cateus Maximus</strong>
-        <span>$CATEUS · Solana meme token</span>
-      </div>
-      <div class="footer-links">
-        <a href="https://x.com/" data-twitter target="_blank" rel="noopener noreferrer">X</a>
-      </div>
-      <p class="footer-disclaimer">
-        $CATEUS is a meme token with no intrinsic value or expectation of financial return. Not financial advice. DYOR.
-      </p>
+    <div class="buy-cta reveal">
+      <a class="btn btn-lg" href="https://x.com/cateusmaximusol" target="_blank" rel="noopener">
+        Get CA on X <svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+      </a>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- ── ART ──────────────────────────────────────────────── -->
+<section id="art" class="art">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-label">Art</span>
+      <h2 class="section-title">Made for the legion</h2>
+      <p class="section-sub">Every piece below is Cateus Maximus. Click any of them.
+         Post yours on X and it can land here.</p>
+    </header>
+    <div class="gallery" id="gallery"><!-- populated from gallery.json --></div>
+    <div class="art-cta reveal">
+      <a class="btn btn-ghost" href="https://x.com/cateusmaximusol" target="_blank" rel="noopener">
+        Follow @cateusmaximusol <svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── JOIN ─────────────────────────────────────────────── -->
+<section class="join">
+  <picture><source srcset="/assets/img/mascot-bull.avif" type="image/avif"><img class="join-art" src="/assets/img/mascot-bull.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="900" height="900"></picture>
+  <div class="wrap">
+    <div class="halo small" aria-hidden="true"><span></span><span></span><span></span></div>
+    <h2 class="reveal">Join the legion</h2>
+    <p class="reveal">No promises, no roadmap. Just a Roman cat with a sword and a very loud trench chat.</p>
+    <div class="socials reveal">
+      <a class="social" href="https://x.com/cateusmaximusol" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2.2h3.4l-7.4 8.4 8.7 11.5h-6.8l-5.3-7-6.1 7H1.9l7.9-9L1.5 2.2h7l4.8 6.4 5.6-6.4Zm-1.2 17.9h1.9L6.4 4.1H4.4l13.3 16Z"/></svg>
+        <span>@cateusmaximusol</span>
+      </a>
+      <a class="social" href="https://dexscreener.com/solana" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.5 9 11l4 4 8-8.5"/><path d="M15 6.5h6v6"/></svg>
+        <span>Chart</span>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="brand" href="#top">
+        <picture><source srcset="/assets/img/mascot-avatar.avif" type="image/avif"><img src="/assets/img/mascot-avatar.jpg" alt="" width="30" height="30" decoding="async"></picture>
+        <span>CATEUS</span>
+      </a>
+      <code class="foot-ca" data-copy="TBA">TBA</code>
+    </div>
+    <p class="disclaimer">
+      $CATEUS is a meme coin with no intrinsic value and no expectation of financial return. It is a community
+      mascot project and is not an investment or a security. Crypto assets are highly volatile and you can lose
+      everything you put in. Nothing on this page is financial advice — do your own research.
+    </p>
+    <p class="copy">Cateus Maximus · © <span id="year">2026</span> the $CATEUS community</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Community art viewer">
+  <button class="lb-close" type="button" aria-label="Close">✕</button>
+  <button class="lb-nav prev" type="button" data-lb-prev aria-label="Previous">‹</button>
+  <img id="lightbox-img" src="" alt="">
+  <button class="lb-nav next" type="button" data-lb-next aria-label="Next">›</button>
+  <a class="lb-cap" id="lightbox-cap" href="#" target="_blank" rel="noopener"></a>
+</div>
+
+<script src="/assets/js/nebula.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
 </body>
 </html>
