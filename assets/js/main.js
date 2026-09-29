@@ -357,7 +357,9 @@
         // without running tools/build_thumbs.sh) and a browser too old for AVIF.
         const img = document.createElement('img');
         const thumb = src.startsWith('data:') ? src
-          : '/assets/img/community/thumbs/' + file.replace(/\.[^.]+$/, '') + '.avif';
+          : (typeof item === 'object' && item.thumb
+              ? '/assets/img/community/thumbs/' + item.thumb
+              : '/assets/img/community/thumbs/' + file.replace(/\.[^.]+$/, '') + '.png');
         img.src = thumb; img.alt = alt;
         img.loading = 'lazy'; img.decoding = 'async';
         img.width = 400; img.height = 400;
@@ -399,7 +401,9 @@
         const img = document.createElement('img');
         const full = '/assets/img/community/' + file;
         img.src = file.startsWith('data:') ? file
-          : '/assets/img/community/thumbs/' + file.replace(/\.[^.]+$/, '') + '.avif';
+          : (typeof item === 'object' && item.thumb
+              ? '/assets/img/community/thumbs/' + item.thumb
+              : '/assets/img/community/thumbs/' + file.replace(/\.[^.]+$/, '') + '.png');
         img.addEventListener('error', () => {
           if (img.src !== full && !file.startsWith('data:')) img.src = full;
         });
